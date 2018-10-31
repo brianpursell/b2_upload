@@ -38,7 +38,6 @@ class SmallFileUpload:
         response = requests.post(self.upload_url, data=file_data, headers=headers)
 
         if response.status_code == 200:
-            print 'success'
             mark_done(self.local_dir, self.file_name)
         else:
             print response.json()
